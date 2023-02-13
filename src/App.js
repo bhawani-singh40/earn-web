@@ -1,25 +1,33 @@
-import logo from './logo.svg';
+import { Component } from 'react';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import About from './compents/About/About';
+import Contact from './compents/Contact/Contact';
+import Home from './compents/Home/Home';
+import Navbar from './compents/Navbar/Navbar';
+import GlobalStyle from './styles/Global';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    navbarOpen: false
+  }
+
+  handleNavbar = () => {
+    this.setState({ navbarOpen: !this.state.navbarOpen });
+  }
+
+  render() {
+
+    return (
+      <>
+        <Navbar 
+          navbarState={this.state.navbarOpen} 
+          handleNavbar={this.handleNavbar}
+        />
+        <GlobalStyle />
+        <Home/>
+      </>
+    )
+  }
 }
-
 export default App;
