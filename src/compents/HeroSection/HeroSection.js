@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import earn_money from "../../assets/make-money-online.png";
 
 const HeroContainer = styled.div`
   display: flex;
@@ -58,14 +57,14 @@ const HeroImage = styled.img`
   }
 `;
 
-const HeroSection = () => {
+const HeroSection = (props) => {
   return (
     <HeroContainer>
       <TextContainer>
-        <HeroText>Make money online.</HeroText>
-        <HeroSubText>On the phone, computer or tablet, get paid wherever you are, without investment.</HeroSubText>
+        <HeroText>{props.herotext}</HeroText>
+        <HeroSubText>{props.herosubtext}</HeroSubText>
       </TextContainer>
-      <HeroImage src={earn_money} alt="hero image" />
+      <HeroImage src={props.img} alt="hero image" />
     </HeroContainer>
   );
 };
