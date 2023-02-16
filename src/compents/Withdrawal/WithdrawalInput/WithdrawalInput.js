@@ -45,6 +45,13 @@ const WithdrawalButton = styled.button`
   
   margin-top:1rem;
 
+  & a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
   &:hover {
     background-color: #005D7E;
   }
@@ -55,8 +62,10 @@ const WithdrawalInput=()=>{
         <>
         <CardContainer>
         <InputContainer>
-            <InputField placeholder="Enter your response here" />
-            <WithdrawalButton>Withdrawal</WithdrawalButton>
+            <InputField placeholder="Enter your Withdrawal Amount" />
+            <WithdrawalButton>
+              <a href='/withdrawal/history'>Withdrawal</a> 
+            </WithdrawalButton>
         </InputContainer>
         </CardContainer>
         </>

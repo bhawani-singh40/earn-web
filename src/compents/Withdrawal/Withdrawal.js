@@ -63,6 +63,29 @@ const TextWrapper = styled.div`
   text-align: center;
 `;
 
+const WithdrawalButton = styled.button`
+  background-color: #008CBA;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  
+  margin-top:1rem;
+
+  & a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &:hover {
+    background-color: #005D7E;
+  }
+`;
+
 const Withdrawal=()=>{
     return(
         <Wrapper>
@@ -73,6 +96,10 @@ const Withdrawal=()=>{
             <Heading>My Balance - <Span> $500.00 </Span> </Heading>
             <Bankh3>Bank Number - <BankSpan> Paytm bank </BankSpan> </Bankh3>
             <Bankh3>Ac. Number - <BankSpan> 917349303040 </BankSpan> </Bankh3>
+            <Bankh3>ifsc -<BankSpan> PYTM0123456 </BankSpan> </Bankh3>
+            <WithdrawalButton>
+              <a href='/withdrawal/history'>Transactions</a>
+            </WithdrawalButton>
           </TextWrapper>
         </Card>
         <WithdrawalInput/>

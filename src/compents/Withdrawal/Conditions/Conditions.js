@@ -19,7 +19,7 @@ const ConditionCard = styled.div`
 
 const Heading = styled.h1`
   text-align: center;
-  font-size: 300%;
+  font-size: 350%;
   margin-bottom: 4rem;
   font-weight: bold;
   color: #253858;
@@ -27,25 +27,32 @@ const Heading = styled.h1`
 
 const ConditionText = styled.h3`
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: #253858;
+  text-align: start;
+`;
+
+const Span = styled.span`
+  text-align: center;
+  font-size: 2rem;
+  color: green;
 `;
 
 const Conditions=()=>{
     return(
-        <ConditionCard>
-            <Heading>Privacy And Conditions</Heading>
-            <ConditionText>
-                1.Minimum withdrawal is 150 Rs.
-                2.Withdrawal time is 10:00-18:00.
-                3.Withdrawal available once per day.
-                4.Withdrawal tax:
-                The withdrawal amount below 5000 Rs charge 10% tax.
-                The withdrawal amount above 5000 Rs charge 8% tax.
-                5.If withdrawal failed, please check your bank account information is correct.
-                6. Withdrawal will arrive in your account within 12 hours
-            </ConditionText>
-        </ConditionCard>
+    <ConditionCard>
+        <Heading>Privacy And Conditions</Heading>
+        <ConditionText>
+            <Span>1.</Span>Minimum withdrawal is 150 Rs. <br/>
+            <Span>2.</Span>Withdrawal time is 10:00-18:00.<br/>
+            <Span>3.</Span>Withdrawal available once per day.<br/>
+            <Span>4.</Span>Withdrawal tax: <br/>
+            The withdrawal amount below 5000 Rs charge 10% tax.<br/>
+            The withdrawal amount above 5000 Rs charge 8% tax.<br/>
+            <Span>5.</Span>If withdrawal failed, please check your bank account information is correct.<br/>
+            <Span>6.</Span> Withdrawal will arrive in your account within 12 hours<br/>
+        </ConditionText>
+    </ConditionCard>
     )
 }
 

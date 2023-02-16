@@ -29,7 +29,7 @@ const Navbar = (props) => {
             <a href="/earnings">Earnings</a>
             <a href="/contact">Contact Us</a>
           <Button>
-            <a href="/">Sign In</a>
+            <a href="/signup">Sign In</a>
           </Button>
           </NavLinks>
           <MenuWrapper>
