@@ -23,6 +23,9 @@ const Signup = () =>{
           <Span>Already have account?
             <a href="/signin"> Sign In </a> 
           </Span>
+          <Span>
+            <a href="/search-account"> Forgot Password ? </a> 
+          </Span>
         </Form>
       </Container>
     </Background> 

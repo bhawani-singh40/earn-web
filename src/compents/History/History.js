@@ -6,6 +6,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding: 20px;
   padding-top: 150px;
+  font-family: ui-monospace;
 `;
 
 const CardContainer = styled.div`
@@ -16,13 +17,13 @@ const CardContainer = styled.div`
   border: 2px solid #ccc;
   border-radius: 34px;
   padding: 16px;
-  margin: 66px;
+  margin: 56px;
   background:#f8f9fa;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
    
   @media (max-width: 768px) {
-    margin: 20px;
+    margin: 15px -8px;
   }
 `;
 

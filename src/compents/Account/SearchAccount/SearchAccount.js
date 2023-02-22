@@ -1,26 +1,23 @@
 import React from "react";
 import styled from 'styled-components';
-import contactus from "../../assets/contactus.svg";
+import Mailsent from "./../../../assets/Mailsent.svg";
 
-const Contact = () =>{
+const SearchAccount = () =>{
     return(
-      <>
-      <Heading>Contact with us</Heading>
       <Background>
       <Container>
-        <Image src={contactus} />
+        <Image src={Mailsent}/>
         <Form>
-          <Label>Name</Label>
-          <Input type="text" />
           <Label>Email</Label>
-          <Input type="email" />
-          <Label>Message</Label>
-          <Textarea />
-          <Button type="submit">Submit</Button>
+          <Input placeholder="Enter Your Email" type="password"/>
+          <Button type="submit">Send</Button>
+          <Span>
+            <a href="/signup">Create account </a>Or
+            <a href="/signin">SignIn</a> 
+          </Span>
         </Form>
       </Container>
-    </Background> 
-    </>
+      </Background> 
     )
 }
 
@@ -31,22 +28,16 @@ const Background = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  padding:80px;
+  padding-top: 140px;
   padding-bottom: 100px;
   @media (max-width: 768px) {
     height: auto;
-    padding:50px;
+    padding:30px;
+    padding-top: 140px;
   }
 `;
 
-const Heading = styled.h1`
-    width: 100%;
-    font-size: 4rem;
-    color: #253858;
-    text-align: center;
-    padding-top: 150px;
-    // background-color: #f2f2f2;
-`;
 
 const Container = styled.div`
   background-color: #fff;
@@ -97,14 +88,6 @@ const Input = styled.input`
   
 `;
 
-const Textarea = styled.textarea`
-  height: 100px;
-  border-radius: 5px;
-  border: solid;
-  margin-bottom: 10px;
-  padding: 10px;
-`;
-
 const Button = styled.button`
   height: 40px;
   border-radius: 5px;
@@ -116,4 +99,20 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default Contact
+const Span = styled.span`
+    width: 100%;
+    font-size: 1.3rem;
+    color: blue;
+    // text-align: center;
+    padding-top: 20px;
+    // background-color: #f2f2f2;
+
+    & a {
+        color: #848484;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        margin-left:3px;
+`;
+
+export default SearchAccount;

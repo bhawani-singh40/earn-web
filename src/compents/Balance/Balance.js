@@ -13,6 +13,7 @@ const Container = styled.div`
   margin: 66px;
   transition: all 0.2s ease-in-out;
   box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  font-family: ui-monospace;
    
   @media (max-width: 768px) {
     margin: 20px;

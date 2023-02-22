@@ -17,11 +17,12 @@ const CollapseMenu = (props) => {
       >
         <NavLinks>
           <li><a href="/" onClick={props.handleNavbar}>Home</a></li>
-          <li><a href="/" onClick={props.handleNavbar}>HOW IT WORKS</a></li>
+          <li><a href="/earnings" onClick={props.handleNavbar}>Earnings</a></li>
           <li><a href="/contact" onClick={props.handleNavbar}>CONTACT US</a></li>
           <li></li>
         </NavLinks>
-        <Button><a href="/">Sign In</a></Button>
+        <Button><a href="/signin">Sign In</a></Button>
+        <Button><a href="/signup">Registraction</a></Button>
       </CollapseWrapper>
     );
   }
@@ -31,25 +32,31 @@ const CollapseMenu = (props) => {
 export default CollapseMenu;
 
 const CollapseWrapper = styled(animated.div)`
-  background: #2d3436;
+  background: #fff;
   position: fixed;
-  top: 11.5rem;
+  top: 11rem;
   left: 0;
   right: 0;
+  height:100vh;
+  margin-left:50px;
+  font-family: ui-monospace;
 `;
 
 const NavLinks = styled.ul`
   list-style-type: none;
   padding: 3rem 2rem 3rem 4rem;
+  margin-bottom:45%;
 
   & li {
     transition: all 300ms linear 0s;
+    border-bottom: solid;
+    border-bottom-color: #848484;
   }
 
   & a {
-    font-size: 1.4rem;
-    line-height: 2;
-    color: #dfe6e9;
+    font-size: 2.4rem;
+    line-height: 3;
+    color: #848484;
     text-transform: uppercase;
     text-decoration: none;
     cursor: pointer;
@@ -65,12 +72,13 @@ const Button = styled.button`
   background-color: #157ff1;
   color: #fff;
   padding: 14px 20px;
-  margin: 8px 0;
+  margin: 5px;
   border: none;
   cursor: pointer;
   width: 100%;
   border-radius: 4px;
   font-size: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
   & a {
     font-size: 1.4rem;

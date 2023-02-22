@@ -1,22 +1,30 @@
 import React from "react";
 import styled from 'styled-components';
-import contactus from "../../assets/contactus.svg";
+import bank from "./../../../../../assets/bank.svg";
 
-const Contact = () =>{
+const BankCard = () =>{
     return(
-      <>
-      <Heading>Contact with us</Heading>
+        <>
       <Background>
       <Container>
-        <Image src={contactus} />
+        <Image src={bank} />
         <Form>
           <Label>Name</Label>
           <Input type="text" />
+          <Label>Bank Name</Label>
+          <Input type="text" />
+          <Label>Bank Card Number</Label>
+          <Input type="text" />
+          <Label>IFSC Number</Label>
+          <Input type="text" />
+          <Label>Mobile</Label>
+          <Input type="text" />
           <Label>Email</Label>
           <Input type="email" />
-          <Label>Message</Label>
-          <Textarea />
           <Button type="submit">Submit</Button>
+          <Span>Please check the imformation carefully, 
+            incorrect information will not receive withdrawals.
+          </Span>
         </Form>
       </Container>
     </Background> 
@@ -31,21 +39,29 @@ const Background = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 100px;
+  padding:80px;
+  padding-top: 140px;
   padding-bottom: 100px;
   @media (max-width: 768px) {
     height: auto;
-    padding:50px;
+    padding:30px;
+    padding-top: 140px;
   }
 `;
 
-const Heading = styled.h1`
+const Span = styled.span`
     width: 100%;
-    font-size: 4rem;
-    color: #253858;
-    text-align: center;
-    padding-top: 150px;
+    font-size: 1.3rem;
+    color: red;
+    // text-align: center;
+    padding-top: 20px;
     // background-color: #f2f2f2;
+
+    & a {
+    color: #848484;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
 `;
 
 const Container = styled.div`
@@ -55,20 +71,21 @@ const Container = styled.div`
   padding: 50px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  max-width: 100%;
+  width: 100%;
   @media (max-width: 768px) {
     flex-direction: column;
   }
 `;
 
 const Image = styled.img`
-  width: 50%;
+  max-width: 50%;
   object-fit: cover;
   border-radius: 10px;
-  margin-right: 50px;
+  margin-right: 30px;
   @media (max-width: 768px) {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    align-self: center;
   }
 `;
 
@@ -97,14 +114,6 @@ const Input = styled.input`
   
 `;
 
-const Textarea = styled.textarea`
-  height: 100px;
-  border-radius: 5px;
-  border: solid;
-  margin-bottom: 10px;
-  padding: 10px;
-`;
-
 const Button = styled.button`
   height: 40px;
   border-radius: 5px;
@@ -116,4 +125,4 @@ const Button = styled.button`
   cursor: pointer;
 `;
 
-export default Contact
+export default BankCard

@@ -1,25 +1,19 @@
 import React from "react";
 import styled from 'styled-components';
-import login from "./../../../assets/login.png";
+import Resetpassword from "./../../../assets/Resetpassword.svg";
 
 const ForgotPassword = () =>{
     return(
         <>
       <Background>
       <Container>
-        <Image src={login} />
+        <Image src={Resetpassword}/>
         <Form>
-          <Label>Number</Label>
-          <Input type="text" />
           <Label>Password</Label>
-          <Input type="password" />
-          <Button type="submit">Sign Up</Button>
-          <Span>
-            <a href="/forgot-password"> Forgot Password? </a>
-           </Span>
-          <Span>Create new account
-            <a href="/signup"> Sign Up </a> 
-          </Span>
+          <Input type="password"/>
+          <Label>Confirm Password</Label>
+          <Input type="password"/>
+          <Button type="submit">Change</Button>
         </Form>
       </Container>
       </Background> 
@@ -44,20 +38,6 @@ const Background = styled.div`
   }
 `;
 
-const Span = styled.span`
-    width: 100%;
-    font-size: 1.3rem;
-    color: blue;
-    // text-align: center;
-    padding-top: 20px;
-    // background-color: #f2f2f2;
-
-    & a {
-        color: #848484;
-        font-weight: 600;
-        text-decoration: none;
-        cursor: pointer;
-`;
 
 const Container = styled.div`
   background-color: #fff;

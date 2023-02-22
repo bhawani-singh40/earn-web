@@ -8,8 +8,9 @@ const HeroContainer = styled.div`
   align-items: center;
   height: auto;
   background-color: #f2f2f2;
-  padding-top: 18rem;
-  padding-bottom: 13rem;
+  padding-top: 12rem;
+  padding-bottom: 2rem;
+  font-family: ui-monospace;
 
   @media (max-width: 768px) {
     flex-direction: column;

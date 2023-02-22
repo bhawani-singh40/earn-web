@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import collect_profit from "../../assets/collect-profits.png";
-import solution from "../../assets/solution.png";
-import under_control from "../../assets/under-control.png";
+import collect_profit from "../../assets/collect-profits.svg";
+import solution from "../../assets/solution.svg";
+import under_control from "../../assets/under-control.svg";
 
 const PageContainer = styled.div`
   display: flex;
@@ -11,6 +11,7 @@ const PageContainer = styled.div`
   height: auto;
   background-color: #f0f7fd;
   padding-bottom:12rem;
+  font-family: ui-monospace;
 
   @media (max-width: 768px) {
     height: auto;

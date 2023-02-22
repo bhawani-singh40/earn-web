@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import withdrawal from "../../assets/withdrawal.png";
+import withdrawal from "../../assets/withdrawal.svg";
 import Conditions from './Conditions/Conditions';
 import WithdrawalInput from './WithdrawalInput/WithdrawalInput';
 
@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   margin: 0 auto;
   padding: 20px;
   padding-top: 150px;
+  font-family: ui-monospace;
 `;
 
 const Heading = styled.h1`

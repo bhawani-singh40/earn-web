@@ -2,7 +2,8 @@ import React from "react";
 import HeroSection from "../HeroSection/HeroSection";
 import Profit from "../Profit/Profit";
 import Steps from "../Steps/Steps";
-import earn_money from "../../assets/make-money-online.png";
+import earn_money from "../../assets/make-money-online.svg";
+import StartMoney from "./StartMoney/StartMoney";
 
 const Home = () =>{
     return(
@@ -14,6 +15,7 @@ const Home = () =>{
             />
             <Profit/>
             <Steps/>
+            <StartMoney/>
         </>
     )
 }
