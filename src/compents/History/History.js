@@ -97,4 +97,4 @@ const History=()=>{
     )
 }
 
-export default History
+export default History;
