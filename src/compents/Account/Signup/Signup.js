@@ -1,24 +1,56 @@
-import React from "react";
+import React, { useState ,useRef,} from "react";
 import styled from 'styled-components';
 import signup from "./../../../assets/signup.png";
+import axios from 'axios';
+import { useDispatch, useSelector } from "react-redux";
+import { clearErrors, login, register } from "../../../actions/userAction";
 
-const Signup = () =>{
+
+const Signup = ({ history, location }) =>{
+  const dispatch = useDispatch();
+
+  const { error, loading, isAuthenticated } = useSelector(
+    (state) => state.user
+  );
+
+  const loginTab = useRef(null);
+  const registerTab = useRef(null);
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    number: '',
+    password: '',
+    password_confirmation: '',
+  });
+
+  const handleChange = e => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = e => {
+    e.preventDefault();
+    axios.post('http://localhost:8000/api/user/register', formData)
+      .then(res => console.log(res))
+      .catch(err => console.log(err));
+  };
+
     return(
       <>
       <Background>
       <Container>
         <Image src={signup} />
-        <Form>
+        <Form onSubmit={handleSubmit}>
           <Label>Name</Label>
-          <Input type="text" />
+          <Input type="text" name="name"  onChange={handleChange} value={formData.name}/>
           <Label>Number</Label>
-          <Input type="text" />
+          <Input type="text" name="number"  onChange={handleChange} value={formData.number}/>
           <Label>Email</Label>
-          <Input type="email" />
+          <Input type="email" name="email"  onChange={handleChange} value={formData.email}/>
           <Label>Password</Label>
-          <Input type="password" />
+          <Input type="password" name="password"  onChange={handleChange} value={formData.password}/>
           <Label>Confirm Password</Label>
-          <Input type="password" />
+          <Input type="password" name="password_confirmation" onChange={handleChange} value={formData.password_confirmation}/>
           <Button type="submit">Sign Up</Button>
           <Span>Already have account?
             <a href="/signin"> Sign In </a> 

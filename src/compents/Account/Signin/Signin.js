@@ -1,19 +1,67 @@
-import React from "react";
+import React,{ useState,useRef,useEffect } from "react";
 import styled from 'styled-components';
-import login from "./../../../assets/login.png";
+import loginimg from "./../../../assets/login.png";
+import { useDispatch, useSelector } from "react-redux";
+import { clearErrors, login } from "../../../actions/userAction";
+import { Navigate } from "react-router-dom";
 
-const Signin = () =>{
+const Signin = ({ history, location }) =>{
+  const dispatch = useDispatch();
+
+  const { error, isAuthenticated } = useSelector(
+    (state) => state.user
+  );
+
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+
+  const loginTab = useRef(null);
+
+  const { email, password} = formData
+
+  const loginSubmit = (e) => {
+    e.preventDefault();
+    dispatch(login(email, password));
+  };
+
+  const handleChange = e => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors());
+    }
+
+    if (isAuthenticated) {
+      Navigate('/user-profile');
+    }
+  }, [dispatch, error, alert, Navigate, isAuthenticated]);
+
+
+  // const handleSubmit = e => {
+  //   e.preventDefault();
+  //   axios.post('http://localhost:8000/api/user/login', formData)
+  //     .then(res => console.log(res))
+  //     .catch(err => console.log(err));
+  // };
+
     return(
-        <>
+      <>
       <Background>
       <Container>
-        <Image src={login} />
-        <Form>
-          <Label>Number</Label>
-          <Input type="text" />
+        <Image src={loginimg} />
+        <Form onSubmit={loginSubmit} ref={loginTab}>
+          <Label >Email</Label>
+          <Input type="email" name="email" value={formData.email}
+           onChange={handleChange} />
           <Label>Password</Label>
-          <Input type="password" />
-          <Button type="submit">Sign Up</Button>
+          <Input type="password" name="password" 
+          value={formData.pas} onChange={handleChange} />
+          <Button type="submit">SignIn</Button>
           <Span>
             <a href="/forgot-password"> Forgot Password? </a>
            </Span>
@@ -24,7 +72,7 @@ const Signin = () =>{
       </Container>
     </Background> 
     </>
-    )
+  )
 }
 
 
